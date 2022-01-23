@@ -9,10 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "^5.2.8",
     "@reduxjs/toolkit": "^1.7.1",
+    "@types/react-redux": "^7.1.22",
     "next": "12.0.8",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-redux": "^7.2.6"
   },
   "devDependencies": {
     "@types/react": "17.0.38",
