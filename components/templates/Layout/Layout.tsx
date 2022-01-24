@@ -18,7 +18,7 @@ function Layout() {
                                 <PostContainer />
                             </Box>
                         </Grid>
-                        <Grid item md={4} xs='none'>
+                        <Grid item md={4}>
                             <SideMenu />
                         </Grid>
                     </Grid>
