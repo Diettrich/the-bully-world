@@ -20,6 +20,12 @@ function PostContainer() {
         <Box sx={{ width: "100%" }}>
             {/* TODO use stack from MUI */}
             <Post {...post} />
+            <Post {...post} />
+            <Post {...post} />
+            <Post {...post} />
+            <Post {...post} />
+            <Post {...post} />
+            <Post {...post} />
         </Box>
     );
 }

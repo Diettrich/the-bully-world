@@ -9,16 +9,16 @@ function Layout() {
     return (
         <React.Fragment>
             <NavBar />
-            <Container fixed>
+            <Container>
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid container spacing={8}>
-                        <Grid item xs={8}>
+                        <Grid item md={8} xs={12}>
                             <Box>
                                 <StoriesContainer />
                                 <PostContainer />
                             </Box>
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item md={4} xs='none'>
                             <SideMenu />
                         </Grid>
                     </Grid>
