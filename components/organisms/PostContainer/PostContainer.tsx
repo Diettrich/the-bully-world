@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import Post from "../../molecules/Post";
 import imgSrc from "../../../public/dev-image/c4c0ced405660ba108d1206e5c6c6872.jpg";
 
@@ -13,6 +13,7 @@ const post = {
     sex: "Male",
     age: "8 weeks",
     Clr: "Merle",
+    liked: false,
 }
 
 function PostContainer() {

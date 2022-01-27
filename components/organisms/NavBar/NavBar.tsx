@@ -8,8 +8,8 @@ import { HomeIcon, SearchIcon } from '../../atoms/icons';
 
 export default function NavBar() {
     return (
-        <Box sx={{ flexGrow: 1, mb: 4, mr: 2 }}>
-            <Container>
+        <Box sx={{ flexGrow: 1, mb: 4, }}>
+            <Container maxWidth='md'>
                 <Toolbar disableGutters>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Thebullyword
