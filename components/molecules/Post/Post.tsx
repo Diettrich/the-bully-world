@@ -86,6 +86,8 @@ function Post({ userName, fullName, avatar, price, imgSrc, timeLeft, description
                     `
                     ]}
                 />
+                {/* TODO */}
+                {/* fixe this, make it like story Item */}
                 <Image
                     src={imgSrc}
                     alt="photo"

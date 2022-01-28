@@ -22,7 +22,7 @@ const StyledImage = styled(Image)`
     border-radius: 10px;
 `;
 
-function StorieItem({ userName, imgSrc }: StoryProps): JSX.Element {
+function StoryItem({ userName, imgSrc }: StoryProps): JSX.Element {
     return (
         <Box sx={{ cursor: 'pointer' }}>
             <Box sx={{ width: 110, height: 172, position: 'relative' }}>
@@ -41,4 +41,4 @@ function StorieItem({ userName, imgSrc }: StoryProps): JSX.Element {
     );
 }
 
-export default StorieItem;
+export default StoryItem;

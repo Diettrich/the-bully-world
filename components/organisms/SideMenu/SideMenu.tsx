@@ -5,9 +5,10 @@ import {
     PaidIcon,
     DescriptionIcon
 } from "../../atoms/icons";
-import MenuListItem from "../../molecules/MenuListItem";
+import MenuListItem from "../../atoms/MenuListItem";
 
 function SideMenu() {
+    // TODO: remove style from Box
     return (
         <Box sx={{ height: 500, width: "100%" }}>
             <List>

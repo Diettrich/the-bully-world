@@ -11,15 +11,13 @@ function Layout() {
             <NavBar />
             <Container maxWidth='md'>
                 <Grid container>
-                    <Grid item md={8} sm={12}>
-                        <Box>
-                            <StoriesContainer />
-                            <PostContainer />
-                        </Box>
+                    <Grid item md={8} xs={12}>
+                        <StoriesContainer />
+                        <PostContainer />
                     </Grid>
                     <Grid item md={4}
                         sx={{
-                            display: { md: 'block', sm: 'none' },
+                            display: { md: 'block', sm: 'none', xs: 'none' },
                             pl: 4,
                         }}>
                         <SideMenu />

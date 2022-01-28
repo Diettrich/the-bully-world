@@ -39,8 +39,12 @@ function StoriesContainer(): JSX.Element {
                 <StoryItem {...story} />
                 <StoryItem {...story} />
                 <StoryItem {...story} />
+                <StoryItem {...story} />
+                <StoryItem {...story} />
+                <StoryItem {...story} />
+                <StoryItem {...story} />
             </StyledBox>
-        </Box>
+        </Box >
     );
 }
 
