@@ -1,4 +1,6 @@
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import styled from '@emotion/styled';
+import Image from "next/image";
 
 // const StyledBox = styled(Box)`
 //     width: 110px;
@@ -11,12 +13,30 @@ import { Box } from '@mui/material';
 //     }
 // `;
 
-function StorieItem(): JSX.Element {
-    return (
-        <Box>
-            <Box sx={{ width: 110, height: 172, border: '1px red solid', mr: 1 }}>
+type StoryProps = {
+    userName: string,
+    imgSrc: any,
+}
 
+const StyledImage = styled(Image)`
+    border-radius: 10px;
+`;
+
+function StorieItem({ userName, imgSrc }: StoryProps): JSX.Element {
+    return (
+        <Box sx={{ cursor: 'pointer' }}>
+            <Box sx={{ width: 110, height: 172, position: 'relative' }}>
+                <StyledImage
+                    src={imgSrc}
+                    alt="story photo"
+                    width={110}
+                    height={172}
+                    layout="responsive"
+                    objectFit="cover"
+                    quality={100}
+                />
             </Box>
+            <Typography sx={{ color: '#444B51', fontWeight: 500, fontSize: 14, mt: 1 }}>{userName}</Typography>
         </Box>
     );
 }

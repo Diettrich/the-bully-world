@@ -90,6 +90,7 @@ function Post({ userName, fullName, avatar, price, imgSrc, timeLeft, description
                     src={imgSrc}
                     alt="photo"
                     layout="fill"
+                    quality={100}
                 />
             </Box>
             <Box>

@@ -3,19 +3,26 @@ import styled from '@emotion/styled';
 import StoryItem from "../../molecules/StoryItem";
 import { NavigateBeforeIcon, NavigateNextIcon } from "../../atoms/icons";
 
+import imgSrc from "../../../public/dev-image/exclusive.jpg";
+
 const StyledBox = styled(Box)`
     display: flex;
     overflow-y: hidden;
+    gap: 10px;
     
     &::-webkit-scrollbar {
         display: none;
     }
 `;
 
+const story = {
+    userName: "Exclusivekennels",
+    imgSrc: imgSrc,
+}
+
 function StoriesContainer(): JSX.Element {
     return (
-        // TODO: Add stories here
-        <Box sx={{ border: '1px red solid', width: "100%", mb: 8, }}>
+        <Box sx={{ width: "100%", mb: 8, }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                 <IconButton>
                     <NavigateBeforeIcon style={{ fill: '#737373' }} />
@@ -25,12 +32,13 @@ function StoriesContainer(): JSX.Element {
                 </IconButton>
             </Box>
             <StyledBox>
-                <StoryItem />
-                <StoryItem />
-                <StoryItem />
-                <StoryItem />
-                <StoryItem />
-                <StoryItem />
+                <StoryItem {...story} />
+                <StoryItem {...story} />
+                <StoryItem {...story} />
+                <StoryItem {...story} />
+                <StoryItem {...story} />
+                <StoryItem {...story} />
+                <StoryItem {...story} />
             </StyledBox>
         </Box>
     );
