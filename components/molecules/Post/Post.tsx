@@ -1,13 +1,14 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-// import Link from 'next/link';
-
-import { MoreHorizIcon, FavoriteIcon } from "../../atoms/icons";
 import { Avatar, Box, Typography, IconButton } from "@mui/material";
-import { css } from '@emotion/react';
 import { keyframes } from '@mui/system';
+import { css } from '@emotion/react';
+import { MoreHorizIcon, FavoriteIcon, MapsUgcIcon, ReportIcon } from "../../atoms/icons";
+import Menu from '../../organisms/Menu';
+import MenuItem from '../../atoms/MenuItem';
 
 type PostProps = {
+    id: string | number,
     userName: string,
     fullName: string,
     avatar: string,
@@ -41,9 +42,46 @@ const likeAnimation = keyframes`
 }`;
 
 
-function Post({ userName, fullName, avatar, price, imgSrc, timeLeft, description, sex, age, Clr, liked }: PostProps) {
+function Post({ id, userName, fullName, avatar, price, imgSrc, timeLeft, description, sex, age, Clr, liked }: PostProps) {
 
     const [likedState, setLikedState] = useState(liked);
+
+    const [open, setOpen] = React.useState(false);
+    const anchorRef = React.useRef<HTMLButtonElement>(null);
+
+    const handleToggle = () => {
+        setOpen((prevOpen) => !prevOpen);
+    };
+
+    const handleClose = (event: Event | React.SyntheticEvent) => {
+        if (
+            anchorRef.current &&
+            anchorRef.current.contains(event.target as HTMLElement)
+        ) {
+            return;
+        }
+
+        setOpen(false);
+    };
+
+    // return focus to the button when we transitioned from !open -> open
+    const prevOpen = React.useRef(open);
+    React.useEffect(() => {
+        if (prevOpen.current === true && open === false) {
+            anchorRef.current!.focus();
+        }
+
+        prevOpen.current = open;
+    }, [open]);
+
+    function handleListKeyDown(event: React.KeyboardEvent) {
+        if (event.key === 'Tab') {
+            event.preventDefault();
+            setOpen(false);
+        } else if (event.key === 'Escape') {
+            setOpen(false);
+        }
+    }
 
     const likePost = () => {
         // flip like state
@@ -109,12 +147,33 @@ function Post({ userName, fullName, avatar, price, imgSrc, timeLeft, description
                         edge="start"
                         color="inherit"
                         aria-label="More"
+                        ref={anchorRef}
+                        id={`post-menu-button-${id}`}
+                        aria-controls={open ? 'composition-menu' : undefined}
+                        aria-expanded={open ? 'true' : undefined}
+                        aria-haspopup="true"
+                        onClick={handleToggle}
                     >
                         <MoreHorizIcon style={{ fill: '#737373' }} />
                     </IconButton>
+                    <Menu
+                        menuOptions={{
+                            open,
+                            anchorRef,
+                            handleClose,
+                            handleListKeyDown,
+                            placement: "bottom-end",
+                            id: `post-menu-${id}`,
+                            ariaLabelledby: `post-menu-button-${id}`,
+                        }}
+                        sx={{ width: 160 }}
+                    >
+                        <MenuItem handleClick={handleClose} Icon={MapsUgcIcon} text="Message" />
+                        <MenuItem handleClick={handleClose} Icon={ReportIcon} text="Report" />
+                    </Menu>
                 </Box>
             </Box>
-        </Box>
+        </Box >
     );
 }
 

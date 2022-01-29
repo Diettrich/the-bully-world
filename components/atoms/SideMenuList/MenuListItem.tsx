@@ -9,7 +9,7 @@ type ItemProps = {
     Icon: any
 }
 
-function MenuListItem({ Icon, text }: ItemProps) {
+function SideMenuList({ Icon, text }: ItemProps) {
     return (
         <ListItem disablePadding>
             <ListItemButton>
@@ -22,4 +22,4 @@ function MenuListItem({ Icon, text }: ItemProps) {
     );
 }
 
-export default MenuListItem;
+export default SideMenuList;

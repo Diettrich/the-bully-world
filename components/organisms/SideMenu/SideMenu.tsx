@@ -5,17 +5,17 @@ import {
     PaidIcon,
     DescriptionIcon
 } from "../../atoms/icons";
-import MenuListItem from "../../atoms/MenuListItem";
+import SideMenuList from "../../atoms/SideMenuList";
 
 function SideMenu() {
     // TODO: remove style from Box
     return (
         <Box sx={{ height: 500, width: "100%" }}>
             <List>
-                <MenuListItem Icon={LoginIcon} text="Login" />
-                <MenuListItem Icon={PetsIcon} text="Breeders List" />
-                <MenuListItem Icon={PaidIcon} text="Membership" />
-                <MenuListItem Icon={DescriptionIcon} text="Faqs" />
+                <SideMenuList Icon={LoginIcon} text="Login" />
+                <SideMenuList Icon={PetsIcon} text="Breeders List" />
+                <SideMenuList Icon={PaidIcon} text="Membership" />
+                <SideMenuList Icon={DescriptionIcon} text="Faqs" />
             </List>
         </Box>
     );

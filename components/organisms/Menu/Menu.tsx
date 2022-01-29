@@ -15,6 +15,8 @@ type MenuOptions = {
     handleClose: (event: Event | React.SyntheticEvent) => void,
     handleListKeyDown: (event: React.KeyboardEvent) => void,
     placement: Placement | undefined,
+    id: string | undefined,
+    ariaLabelledby: string,
 }
 
 export default function Menu({ children, sx, menuOptions }: MenuProps): JSX.Element {
@@ -37,8 +39,8 @@ export default function Menu({ children, sx, menuOptions }: MenuProps): JSX.Elem
                         <ClickAwayListener onClickAway={menuOptions.handleClose}>
                             <MenuList
                                 autoFocusItem={menuOptions.open}
-                                id="composition-menu"
-                                aria-labelledby="composition-button"
+                                id={menuOptions.id}
+                                aria-labelledby={menuOptions.ariaLabelledby}
                                 onKeyDown={menuOptions.handleListKeyDown}
                             >
                                 {children}
