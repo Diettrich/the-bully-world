@@ -1,8 +1,7 @@
 import React from 'react';
+
 import { Typography, Button, Box } from '@mui/material';
 import Input from '../../atoms/Input';
-import Link from '../../atoms/Link';
-
 
 const Label = ({ children, ...props }: any) => (
     <Typography sx={{
@@ -25,19 +24,20 @@ const AppButton = ({ children }: any) => (
     }}>{children}</Button>
 );
 
-function LoginForm() {
+function RegisterForm() {
     return (
         <>
+            <Label>Kennel Name *</Label>
+            <Input />
             <Label>Email Address *</Label>
             <Input />
             <Label>Password *</Label>
             <Input />
-            <Link href='#' sx={{ color: '#589FF8', textDecoration: 'none' }} >lost your password ?</Link>
             <Box>
-                <AppButton>log in</AppButton>
+                <AppButton>Register</AppButton>
             </Box>
         </>
     );
 }
 
-export default LoginForm;
+export default RegisterForm;

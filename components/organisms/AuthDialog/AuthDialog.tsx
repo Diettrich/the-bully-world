@@ -4,6 +4,8 @@ import { styled } from '@mui/material/styles';
 
 import Dialog from '../../molecules/Dialog';
 import LoginForm from '../../molecules/LoginForm';
+import RegisterForm from '../../molecules/RegisterForm';
+
 import { LoginIcon, PersonAddIcon } from '../../atoms/icons';
 
 import { useAppSelector, useAppDispatch } from '../../../app/hooks';
@@ -50,7 +52,7 @@ function TabPanel(props: TabPanelProps) {
             {...other}
         >
             {value === index && (
-                <Box sx={{ p: 3 }}>
+                <Box sx={{ mt: 4 }}>
                     <Typography>{children}</Typography>
                 </Box>
             )}
@@ -92,7 +94,7 @@ function AuthDialog(): JSX.Element {
                 <LoginForm />
             </TabPanel>
             <TabPanel value={value} index={1}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dolore aperiam distinctio, modi ex quis quam quaerat nemo adipisci asperiores alias debitis. Molestias voluptas quasi odit, eveniet doloribus sint possimus?
+                <RegisterForm />
             </TabPanel>
         </Dialog>
     );
