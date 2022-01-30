@@ -6,12 +6,13 @@ const IconStyle = {
 
 type ItemProps = {
     text: string,
-    Icon: any
+    Icon: any,
+    handleClick: (event: Event | React.SyntheticEvent) => void,
 }
 
-function SideMenuList({ Icon, text }: ItemProps) {
+function SideMenuList({ Icon, text, handleClick }: ItemProps) {
     return (
-        <ListItem disablePadding>
+        <ListItem onClick={handleClick} disablePadding>
             <ListItemButton>
                 <ListItemIcon>
                     {<Icon style={IconStyle} />}

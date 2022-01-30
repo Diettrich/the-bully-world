@@ -23,13 +23,6 @@ function PostContainer() {
             {
                 Array.from(Array(10).keys()).map(index => <Post key={index} id={index} {...post} />)
             }
-            {/* <Post {...post} />
-            <Post {...post} />
-            <Post {...post} />
-            <Post {...post} />
-            <Post {...post} />
-            <Post {...post} />
-            <Post {...post} /> */}
         </Box>
     );
 }

@@ -8,10 +8,15 @@ import { HomeIcon, SearchIcon, LoginIcon, PetsIcon, PaidIcon, DescriptionIcon, M
 import Menu from '../../organisms/Menu';
 import MenuItem from '../../atoms/MenuItem';
 
+import { useAppDispatch } from '../../../app/hooks';
+import { openLoginDialog } from '../../../app/appSlice';
+
 export default function NavBar(): JSX.Element {
 
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef<HTMLButtonElement>(null);
+
+    const dispatch = useAppDispatch();
 
     const handleToggle = () => {
         setOpen((prevOpen) => !prevOpen);
@@ -99,7 +104,7 @@ export default function NavBar(): JSX.Element {
                     }}
                     sx={{ width: 160 }}
                 >
-                    <MenuItem handleClick={handleClose} Icon={LoginIcon} text="Sign In" />
+                    <MenuItem handleClick={() => dispatch(openLoginDialog())} Icon={LoginIcon} text="Sign In" />
                     <MenuItem handleClick={handleClose} Icon={PetsIcon} text="Breeders List" />
                     <MenuItem handleClick={handleClose} Icon={PaidIcon} text="Membership" />
                     <MenuItem handleClick={handleClose} Icon={DescriptionIcon} text="Faqs" />
